@@ -65,7 +65,7 @@
   gap: 50px;
   padding: 20px;
   margin: 100px auto;
-  justify-content: center;
+  justify-items: center;
 }
 
 .products_container section {

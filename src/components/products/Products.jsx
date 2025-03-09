@@ -3,9 +3,7 @@ import Products_card from "./Products_card.jsx";
 import axios from "axios";
 import classes from "./products.module.css";
 
-
 function Products() {
-  const [first, setFirst] = useState();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -22,7 +20,7 @@ function Products() {
 
   return (
     <>
-      <section className= {classes.products_container}>
+      <section className={classes.products_container}>
         {products.map((singleproduct) => (
           <Products_card product={singleproduct} key={singleproduct.id} />
         ))}

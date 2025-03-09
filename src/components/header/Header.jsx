@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HeadClass from "./header.module.css";
 import Lowerheader from "./Lowerheader";
 import { SlLocationPin } from "react-icons/sl";
@@ -12,12 +13,12 @@ const Header = () => {
       <section>
         <div className={HeadClass.head_container}>
           <div className={HeadClass.logo_container}>
-            <a href="#">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
                 alt="amazon log"
               />
-            </a>
+            </Link>
             <div className={HeadClass.delivery_container}>
               <span>
                 <SlLocationPin />
@@ -29,9 +30,7 @@ const Header = () => {
             </div>
           </div>
 
-
           <div className={HeadClass.search_container}>
-
             <select name="" id="">
               <option value="">All</option>
             </select>
@@ -40,7 +39,7 @@ const Header = () => {
           </div>
           <div className={HeadClass.order_container}>
             {/* right side link */}
-            <a href="" className={HeadClass.language_container}>
+            <Link to="" className={HeadClass.language_container}>
               <img
                 src="https://pngimg.com/uploads/flags/small/flags_PNG14592.png"
                 alt=""
@@ -48,24 +47,24 @@ const Header = () => {
               <select name="" id="">
                 <option value="">EN</option>
               </select>
-            </a>
-            <a href="">
+            </Link>
+            <Link to="/auth">
               <div>
                 <p>Sign In</p>
                 <span>Account & Lists</span>
               </div>
-            </a>
+            </Link>
 
-            <a href="">
+            <Link to="/orders">
               <p>returns</p>
               <span>& orders</span>
-            </a>
+            </Link>
 
-            <a href="" className={HeadClass.cart_container}>
+            <Link to="/cart" className={HeadClass.cart_container}>
               {/* cart */}
               <PiShoppingCartFill size={35} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
