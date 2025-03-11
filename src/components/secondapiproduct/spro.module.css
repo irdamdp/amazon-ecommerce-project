@@ -44,10 +44,11 @@
 .button:hover {
   background-color: #f7b500;
 }
-.card_container:hover .button {
-  display: block;
+.card_info:hover .button {
+  display: block !important;
 }
 .card_container:hover {
+  cursor: pointer;
   transform: scale(1.005);
 }
 .rating {
@@ -60,10 +61,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   max-width: 1450px;
-  gap: 30px;
-  padding: 10px;
+  gap: 50px;
+  padding: 20px;
   margin: 100px auto;
-  width: 90%;
   justify-items: center;
 }
 
@@ -84,7 +84,7 @@
 }
 
 .product_flex .button {
-  display: block;
+  display: block !important;
   position: static;
   width: 150px;
   margin-right: 40px;
@@ -103,12 +103,5 @@
   .product_flex {
     display: flex;
     flex-direction: column;
-    height: unset;
-    margin-bottom: 15px;
-  }
-  
-  .product_flex img {
-    width: 250px !important;
-    height: auto;
   }
 }

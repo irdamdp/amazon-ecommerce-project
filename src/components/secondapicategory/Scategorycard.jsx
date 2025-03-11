@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import classes from "./Scategory.module.css";
 import { Link } from "react-router-dom";
-import classes from "./category.module.css";
 
-function Categorycard({ data }) {
-  
+function Scategorycard({ data }) {
+  // console.log(data.name);
   return (
     <>
       <div className={classes.category_card}>
-        <Link to={`/category/${data.name}`}>
+        <Link to={`/categorys/${data.name.toLowerCase()}`}>
           <span>
             <h2>{data?.title}</h2>
           </span>
@@ -19,4 +19,4 @@ function Categorycard({ data }) {
   );
 }
 
-export default Categorycard;
+export default Scategorycard;

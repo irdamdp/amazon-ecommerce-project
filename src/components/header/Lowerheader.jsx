@@ -6,10 +6,12 @@ const Lowerheader = () => {
     <>
       <div className={HeadClass.lower_header}>
         <ul>
-          <li>
-            <MdMenu size={25}/>
-            <p>All</p>
-          </li>
+          
+            <div>
+              <MdMenu size={23} />
+              <p>All</p>
+            </div>
+          
           <li>Today's Deals</li>
           <li>Costumer Service</li>
           <li>Registry</li>
@@ -22,4 +24,3 @@ const Lowerheader = () => {
 };
 
 export default Lowerheader;
-

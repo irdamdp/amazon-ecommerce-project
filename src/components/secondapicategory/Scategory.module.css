@@ -1,0 +1,40 @@
+.category_card {
+  height: 300px;
+  width: 250px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(207, 139, 139, 0.2);
+  margin: 20px;
+}
+.category_card img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 250px;
+  padding: 0px 10px;
+}
+
+.category_card a {
+  text-decoration: none;
+  color: rgb(35, 35, 35);
+}
+
+.category_card h2,
+.category_card p {
+  padding: 5px;
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 5000 !important;
+}
+.category_card p {
+  font-size: 13px;
+  font-weight: bold !important;
+  color: rgb(9, 132, 209);
+}
+
+.category_container {
+  position: relative;
+  margin-top: -10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  z-index: 2 !important;
+}

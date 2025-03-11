@@ -1,28 +1,25 @@
 import React, { useContext } from "react";
-import Rating from "@mui/material/Rating";
-import classes from "./products.module.css";
+import classes from "./spro.module.css";
 import Currencyformat from "../currencyformat/Currencyformat";
 import { Link } from "react-router-dom";
-// import { categoryInfo } from "../category/categoryFullinfos";
+// import { Scategoryinfo } from "../secondapicategory/scategory.js";
+
 import { DataContext } from "../Dataprovider/Dataprovider";
 import { Type } from "../../Utility/actiontype";
 
-function Products_card({ product, flex, renderdi, remover }) {
-  if (!product || Object.keys(product).length === 0) return <p>Loading...</p>;
-
-  const { image, title, id, rating, price, description } = product;
+function Sproductcard({ categorized, flex, renderdi, remover  }) {
+  const { image, title, id, price, model, brand, description } = categorized;
 
   const [state, dispatch] = useContext(DataContext);
 
   const addtocart = () => {
     dispatch({
       type: Type.ADD_TO_BASKET,
-      alterer: true,
+      alterer: false,
       item: {
         image,
         title,
         id,
-        rating,
         price,
         description,
       },
@@ -36,20 +33,21 @@ function Products_card({ product, flex, renderdi, remover }) {
           flex ? classes.product_flex : ""
         }`}
       >
-
-        <Link to={`/products/${id}`}> 
+        <Link to={`/product/${id}`}>
+          <img src={image} alt="" />
         </Link>
-
         <div className={classes.card_info}>
           <h3>{title}</h3>
-          {renderdi && <div style={{ maxWidth: "550px" }}> {description} </div>}
-          <div className={classes.rating}>
-            {/* Rating */}
-            <Rating value={rating.rate} precision={0.1} />
-            <small>{rating.count}</small>
-          </div>
+          {renderdi && <div style={{ maxWidth: "750px" }}> {description}</div>}
+          {!alter && (
+            <div style={{ fontWeight: "bold", paddingTop: "5px" }}>
+              Model:- {model}, {brand}
+            </div>
+          )}
+
+          <div className={classes.rating}></div>
           <div>
-            {/* price not for everyone */}
+            {/* price */}
             <Currencyformat amount={price} />
           </div>
           {remover ? (
@@ -65,4 +63,4 @@ function Products_card({ product, flex, renderdi, remover }) {
   );
 }
 
-export default Products_card;
+export default Sproductcard;
