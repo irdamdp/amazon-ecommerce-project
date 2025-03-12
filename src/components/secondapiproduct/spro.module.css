@@ -44,13 +44,14 @@
 .button:hover {
   background-color: #f7b500;
 }
-.card_info:hover .button {
-  display: block !important;
+.card_container:hover .button {
+  display: block;
 }
 .card_container:hover {
   cursor: pointer;
   transform: scale(1.005);
 }
+
 .rating {
   display: flex;
   align-items: center;
@@ -90,6 +91,9 @@
   margin-right: 40px;
 }
 
+.product_flex .hidden {
+  width: 200px;
+}
 .product_flex {
   height: 50vh;
 }

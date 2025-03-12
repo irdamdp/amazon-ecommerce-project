@@ -52,7 +52,7 @@ function Cart() {
                       product={item}
                       renderdi={false}
                       flex={true}
-                      remover={true}
+                      remover={false}
                     />
                   ) : (
                     <Sproductcard
@@ -60,7 +60,7 @@ function Cart() {
                       renderdi={false}
                       flex={true}
                       key={i}
-                      remover={true}
+                      remover={false}
                     />
                   )}
                   <div className={classes.btn_container}>

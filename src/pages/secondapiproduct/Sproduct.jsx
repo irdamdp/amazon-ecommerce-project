@@ -19,6 +19,7 @@ function Sproduct() {
   useEffect(() => {
     setIsloader(true);
 
+ 
     axios
       .get("https://fakestoreapi.in/api/products?limit=150")
       .then((res) => {
@@ -42,7 +43,7 @@ function Sproduct() {
       ) : filteredProducts.length > 0 ? (
         <section className={classes.products_container}>
          { filteredProducts.map((singleproduct) => (
-          <Sproductcard categorized={singleproduct} key={singleproduct.id} />
+          <Sproductcard categorized={singleproduct} key={singleproduct.id} remover={true} />
           ))}
         </section>
       ) : (

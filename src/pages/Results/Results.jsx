@@ -27,7 +27,9 @@ function Results() {
 
   return (
     <>
+
       <section>
+
         <h1 style={{ padding: "30px" }}>Results</h1>
         <p style={{ padding: "30px" }}>Category / {categoryName} </p>
 
@@ -36,7 +38,7 @@ function Results() {
         ) : (
           <div className={classes.products_container}>
             {results?.map((productt) => (
-              <Products_card product={productt} key={productt.id} />
+              <Products_card product={productt} key={productt.id} remover={true} />
             ))}
           </div>
         )}

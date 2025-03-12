@@ -3,6 +3,7 @@ import Products_card from "./Products_card.jsx";
 import axios from "axios";
 import classes from "./products.module.css";
 import Loader from "../loader/Loader.jsx";
+
 function Products() {
   const [products, setProducts] = useState([]);
   const [isloader, setIsloader] = useState(false);
@@ -36,7 +37,7 @@ function Products() {
               product={singleproduct}
               key={singleproduct.id}
               renderdi={false}
-              flex={true}
+              flex={false}
               remover={true}
             />
           ))}

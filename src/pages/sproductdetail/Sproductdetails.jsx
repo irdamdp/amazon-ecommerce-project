@@ -17,7 +17,7 @@ function Sproductdetails() {
         )
       : [];
 
-  console.log(filteredProducts);
+  // console.log(filteredProducts);
 
   useEffect(() => {
     setIsloading(true);
@@ -25,7 +25,7 @@ function Sproductdetails() {
       .get("https://fakestoreapi.in/api/products?limit=150")
       .then((res) => {
         setDetail(res.data.products);
-        console.log(res.data.products);
+        // console.log(res.data.products);
         setIsloading(false);
       })
       .catch((err) => {
