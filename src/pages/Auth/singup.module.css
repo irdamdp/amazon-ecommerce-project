@@ -1,0 +1,150 @@
+/* .signup_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.signup_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.signup_form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.signup_form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.signup_form button:hover {
+  background-color: #0056b3;
+}
+
+.signup_form .link {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+.signup_form .link:hover {
+  text-decoration: underline;
+}
+
+ */
+
+.signincontainer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border-radius: 3px solid lightgray;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_logo img {
+  margin: 30px auto;
+  object-fit: contain;
+  width: 120px;
+}
+
+.signinheading {
+  font-size: 24px;
+  margin: 20px 0px;
+}
+.signinform {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 10px;
+  /* width: 100%; */
+}
+.signincontainer form div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.signinform__group {
+  font-size: 16px;
+}
+
+.signinform__group input {
+  padding: 8px;
+  background-color: #fbfeff;
+  border: 1px solid rgb(207, 207, 207) !important;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+.signinform__group input:focus {
+  outline: 2px solid skyblue;
+}
+.signinbtn {
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0c34b;
+
+  cursor: pointer;
+}
+
+.signup_btn {
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.signinbtn:hover {
+  background-color: var(--primary-shade);
+}
+
+.signup_btn:hover {
+  background-color: lightgray;
+}
+
+.signincontainer p {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  padding: 5px;
+}

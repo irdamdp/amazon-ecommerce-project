@@ -49,7 +49,7 @@ function Products_card({ product, flex, renderdi, remover }) {
             <Rating value={rating.rate} precision={0.1} />
             <small>{rating.count}</small>
           </div>
-          <div> look for everything so ythat i can only rely on what u're  doing
+          <div> 
             {/* price not for everyone */}
             <Currencyformat amount={price} />
           </div>

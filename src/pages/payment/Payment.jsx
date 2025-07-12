@@ -2,10 +2,11 @@ import React from "react";
 
 function Payment() {
   return (
-    <Layout>
-      Payment
-    </Layout>
+    <>
+      <div>Payment</div>
+    </>
   );
 }
 
 export default Payment;
+

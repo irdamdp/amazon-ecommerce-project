@@ -6,9 +6,10 @@ import { SlLocationPin } from "react-icons/sl";
 import { HiSearch } from "react-icons/hi";
 import { DataContext } from "../Dataprovider/Dataprovider";
 import { PiShoppingCartLight } from "react-icons/pi";
+import { auth } from "../../Utility/firebase";
 
 const Header = () => {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   const totalitem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -40,7 +41,7 @@ const Header = () => {
                 <option value="">All</option>
               </select>
               <input type="text" name="" id="" placeholder="Search Amazon" />
-              <HiSearch size={35.5} />
+              <HiSearch size={35.5} /> 
             </div>
             <div className={HeadClass.order_container}>
               {/* right side link */}
@@ -54,10 +55,24 @@ const Header = () => {
                 </select>
               </Link>
 
-              <Link to="/auth">
+              <Link to={!user && "/auth"}>
                 <div>
-                  <p>Sign In</p>
-                  <span>Account & Lists</span>
+                  {user ? (
+                    <>
+                      <p>Hello, {user?.email?.split("@")[0]}</p>
+                      <small
+                        style={{ marginLeft: "8px" }}
+                        onClick={() => auth.signOut()}
+                      >
+                        Sign Out
+                      </small>
+                    </>
+                  ) : (
+                    <>
+                      <p>Hello, Sign in</p>
+                      <span>Account & Lists</span> 
+                    </>
+                  )}
                 </div>
               </Link>
 

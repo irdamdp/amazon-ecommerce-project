@@ -33,7 +33,7 @@ function Cart() {
     });
   };
 
-  return (
+  return ( 
     <>
       <section className={basket?.length !== 0 && classes.container}>
         <div className={classes.cart_container}>
