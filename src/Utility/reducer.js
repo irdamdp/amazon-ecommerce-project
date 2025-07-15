@@ -5,20 +5,20 @@ export const initialState = {
   user: null,
 };
 
-export const reducer = (state, action) => {
-  switch (action.type) {
+export const reducer = (state, action) => {              
+  switch (action.type) {                                  
     case Type.ADD_TO_BASKET:
-      const existingitem = state.basket.find(
-        (item) => item.id === action.item.id
-      );
+      const existingitem = state.basket.find(   
+        (item) => item.id === action.item.id    
+      );   
 
       if (!existingitem) {
         return {
           ...state,
-          basket: [...state.basket, { ...action.item, amount: 1 }],
+          basket: [...state.basket, { ...action.item, amount: 1, alterer: action.alterer, }],
         };
-      } else {
-        const updatedbasket = state.basket.map((item) => {
+      } else {  
+        const updatedbasket = state.basket.map((item) => { 
           return item.id === action.item.id
             ? { ...item, amount: item.amount + 1 }
             : item;

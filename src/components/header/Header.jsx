@@ -69,7 +69,7 @@ const Header = () => {
                     </>
                   ) : (
                     <>
-                      <p>Hello, Sign in</p>
+                      <p>Hello, Sign in</p> 
                       <span>Account & Lists</span> 
                     </>
                   )}

@@ -1,0 +1,90 @@
+.payment_header {
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(234, 237, 237);
+}
+
+.payment_section {
+  padding: 30px;
+}
+
+.payment_flex {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  border-bottom: 5px solid rgb(236, 236, 236);
+  margin-bottom: 15px;
+}
+
+.payment_flex h3 {
+  min-width: 300px;
+}
+.payment_flex img {
+  width: 80px !important;
+}
+
+.payment_flex div {
+  height: auto !important;
+}
+
+.payment_container {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.payment_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 16px;
+}
+.payment_price {
+  padding: 20px;
+}
+.payment_price > div {
+  display: flex;
+  font-size: 16px;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.payment_container button {
+  padding: 8px 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+.payment_container button:hover {
+  background-color: var(--primary-shade);
+}
+.error {
+  color: rgb(0, 0, 0);
+  padding-bottom: 20px;
+  /* font-size: 13px; */
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(52, 52, 52);
+}
+
+@media screen and (max-width: 768px) {
+  .payment_flex {
+    flex-direction: column;
+  }
+  .payment_flex h3 {
+    text-align: center;
+  }
+  .payment_flex img {
+    margin: auto;
+  }
+  .payment_container {
+    width: 100%;
+  }
+}

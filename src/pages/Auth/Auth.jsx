@@ -7,7 +7,7 @@ import {
 import classes from "./singup.module.css";
 // Auth.jsx
 import { ClipLoader } from "react-spinners";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 // import { create } from "@mui/material/styles/createTransitions";
 
 import { DataContext } from "../../components/Dataprovider/Dataprovider";
@@ -24,6 +24,8 @@ function Auth() {
   const [{ user }, dispatch] = useContext(DataContext);
 
   const navigate = useNavigate();
+  const navStateData = useLocation();
+  // console.log(navStateData);
 
   // console.log(user);
   // console.log(error);
@@ -41,10 +43,9 @@ function Auth() {
           });
           setError("");
           setLoading({ ...loading, signin: false });
-          navigate("/");
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
           setError(errorMessage);
           setLoading({ ...loading, signin: false });
@@ -60,7 +61,7 @@ function Auth() {
           });
           setLoading({ ...loading, signup: false });
           setError("");
-          navigate("/"); 
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -70,8 +71,6 @@ function Auth() {
         });
     }
   };
-  
-  
 
   return (
     <>
@@ -85,6 +84,20 @@ function Auth() {
 
         <div className={classes.signincontainer}>
           <h1 className={classes.signinheading}>Sign In</h1>
+          {navStateData?.state?.msg && (
+            <p
+              style={{
+                fontWeight: "bold",
+                padding: "5px",
+                textAlign: "center",
+                paddingBottom: "10px",
+                color: "orange",
+              }}
+            >
+              {navStateData?.state?.msg}
+            </p>
+          )}
+
           <form className={classes.signinform}>
             {/* <div className={classes.signinform__group}>
               <label htmlFor="name">Name</label>
@@ -121,7 +134,7 @@ function Auth() {
               ) : (
                 "Sign In"
               )}
-            </button> 
+            </button>
           </form>
           <p className={classes.signintext}>
             By signing in, you agree to the AMAZON FACE CLONE Conditions of Use

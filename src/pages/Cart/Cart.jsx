@@ -9,7 +9,7 @@ import { Type } from "../../Utility/actiontype";
 import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 function Cart() {
-  const [{ basket, alterer }, dispatch] = useContext(DataContext);
+  const [{ basket }, dispatch] = useContext(DataContext);
 
   // useEffect(() => {
   //   console.log("Updated Basket:", basket);
@@ -33,7 +33,7 @@ function Cart() {
     });
   };
 
-  return ( 
+  return (
     <>
       <section className={basket?.length !== 0 && classes.container}>
         <div className={classes.cart_container}>
@@ -46,7 +46,7 @@ function Cart() {
             basket?.map((item, i) => {
               return (
                 <div className={classes.containimg}>
-                  {alterer ? (
+                  {item.alterer ? (
                     <Products_card
                       key={i}
                       product={item}
