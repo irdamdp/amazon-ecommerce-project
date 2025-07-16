@@ -22,7 +22,7 @@ export const categoryInfo = [
   },
   {
     title: "Jewellery",
-    name: "jewellery",
+    name: "jewelery",
     boolean: "true",
     imgLink:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkaTTYZj21zQFFbqm06MMh6H5F166OWYTL4Q&s",

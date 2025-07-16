@@ -11,6 +11,9 @@ function Sproductcard({ categorized, flex, renderdi, remover, alter }) {
   const { image, title, id, price, model, brand, description } = categorized;
 
   const [state, dispatch] = useContext(DataContext);
+  const nothing = () => {
+    "";
+  };
 
   const addtocart = () => {
     dispatch({
@@ -20,6 +23,7 @@ function Sproductcard({ categorized, flex, renderdi, remover, alter }) {
         image,
         title,
         id,
+        model,
         price,
         description,
       },
@@ -53,7 +57,7 @@ function Sproductcard({ categorized, flex, renderdi, remover, alter }) {
 
           <button
             className={`${classes.button} ${remover ? "" : classes.hidden}`}
-            onClick={remover ? addtocart : ""}
+            onClick={remover ? addtocart : nothing}
           >
             {remover ? (
               "Add to cart"

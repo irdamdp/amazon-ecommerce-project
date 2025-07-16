@@ -96,6 +96,20 @@
   font-size: 16px;
 }
 
+.forget_password {
+  display: inline;
+  font-size: 14px;
+  color: #f0c34b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  width: auto !important;
+  max-width: max-content !important;
+}
+
+.forget_password:hover {
+  color: #e09723; /* Amazon-like orange */
+  text-decoration: underline;
+}
 .signinform__group input {
   padding: 8px;
   background-color: #fbfeff;

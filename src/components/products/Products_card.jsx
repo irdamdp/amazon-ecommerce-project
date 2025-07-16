@@ -46,10 +46,10 @@ function Products_card({ product, flex, renderdi, remover }) {
 
           <div className={classes.rating}>
             {/* Rating */}
-            <Rating value={rating.rate} precision={0.1} />
-            <small>{rating.count}</small>
+            <Rating value={rating?.rate} precision={0.1} />
+            <small>{rating?.count}</small>
           </div>
-          <div> 
+          <div>
             {/* price not for everyone */}
             <Currencyformat amount={price} />
           </div>
@@ -58,7 +58,7 @@ function Products_card({ product, flex, renderdi, remover }) {
             className={`${classes.button} ${remover ? "" : classes.hidden}`}
             onClick={remover ? addtocart : ""}
           >
-            {remover ? (   
+            {remover ? (
               "Add to cart"
             ) : (
               <>

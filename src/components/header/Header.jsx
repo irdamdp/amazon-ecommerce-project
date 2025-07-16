@@ -20,12 +20,16 @@ const Header = () => {
         <section>
           <div className={HeadClass.head_container}>
             <div className={HeadClass.logo_container}>
-              <Link to="/">
-                <img
-                  src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
-                  alt="amazon log"
-                />
-              </Link>
+              <div className={HeadClass.logo_link}>
+                <Link to="/">
+                  {/* amazon logo */}
+                  <img
+                    src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
+                    alt="amazon log"
+                  />
+                </Link>
+              </div>
+
               <div className={HeadClass.delivery_container}>
                 <span>
                   <SlLocationPin />
@@ -41,7 +45,7 @@ const Header = () => {
                 <option value="">All</option>
               </select>
               <input type="text" name="" id="" placeholder="Search Amazon" />
-              <HiSearch size={35.5} /> 
+              <HiSearch size={35.5} />
             </div>
             <div className={HeadClass.order_container}>
               {/* right side link */}
@@ -55,7 +59,10 @@ const Header = () => {
                 </select>
               </Link>
 
-              <Link to={!user && "/auth"}>
+              <Link
+                to={!user && "/auth"}
+                className={HeadClass.padding_container}
+              >
                 <div>
                   {user ? (
                     <>
@@ -69,21 +76,25 @@ const Header = () => {
                     </>
                   ) : (
                     <>
-                      <p>Hello, Sign in</p> 
-                      <span>Account & Lists</span> 
+                      <p>Hello, Sign in</p>
+                      <span>Account & Lists</span>
                     </>
                   )}
                 </div>
               </Link>
 
-              <Link to="/orders">
-                <p>returns</p>
-                <span>& orders</span>
+              <Link to="/orders" className={HeadClass.padding_container}>
+                <div>
+                  {" "}
+                  <p>returns</p>
+                  <span>& orders</span>
+                </div>
               </Link>
 
               <Link to="/cart" className={HeadClass.cart_container}>
                 {/* cart */}
-                <PiShoppingCartLight size={35} />
+
+                <PiShoppingCartLight size={36} />
                 <span> {totalitem} </span>
               </Link>
             </div>

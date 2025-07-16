@@ -99,10 +99,6 @@ function Auth() {
           )}
 
           <form className={classes.signinform}>
-            {/* <div className={classes.signinform__group}>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" required />
-            </div> */}
             <div className={classes.signinform__group}>
               <label htmlFor="email">Email</label>
               <input
@@ -122,7 +118,11 @@ function Auth() {
                 id="password"
                 required
               />
+              <Link to="/forgot-password" className={classes.forget_password}>
+                Forget password?
+              </Link>
             </div>
+
             <button
               onClick={authhandeler}
               type="submit"

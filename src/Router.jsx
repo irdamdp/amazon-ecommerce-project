@@ -10,6 +10,7 @@ import Results from "./pages/Results/Results";
 import ProductDetail from "./pages/ProductDetails/ProductDetail";
 import Sproduct from "./pages/secondapiproduct/Sproduct";
 import Protectedroute from "./components/protectedroute/Protectedroute.jsx";
+import Authforget from "./pages/Auth/Authforget.jsx";
 import Sproductdetails from "./pages/sproductdetail/Sproductdetails";
 import { CheckoutProvider, Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -23,6 +24,8 @@ function Routering() {
       <Router>
         <Routes>
           <Route path="auth" element={<Authh />} />
+          <Route path="/forgot-password" element={<Authforget />} />
+
           <Route path="/" element={<Layoutt />}>
             <Route index element={<Landings />} />
             <Route path="cart" element={<Cart />} />
@@ -40,7 +43,6 @@ function Routering() {
                 </Protectedroute>
               }
             />
-
             <Route
               path="/orders"
               element={

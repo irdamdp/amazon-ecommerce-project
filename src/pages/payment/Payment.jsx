@@ -9,11 +9,12 @@ import { axiosinstance } from "../../Api/axios";
 import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import { useNavigate } from "react-router-dom";
+import { Type } from "../../Utility/actiontype";
 
 function Payment() {
   const [processing, setprocessing] = useState(false);
   const [error, setError] = useState(null);
-  const [{ user, basket }] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
 
   // Initialize Stripe and Elements
   const stripe = useStripe();
@@ -36,7 +37,7 @@ function Payment() {
 
   const handleChange = (event) => {
     if (event.error) {
-      // console.error("Card Element Error:", event.error.message);
+      console.error("Card Element Error:", event.error.message);
       setError(event.error.message);
     } else {
       // console.log("Card Element Valid");
@@ -72,8 +73,7 @@ function Payment() {
 
       // console.log("Payment Confirmation:", confirmation);
 
-      // 3. after payment success and confirmation ---> order firestore databases save , clear basket, redirect to orders page
-
+      // 3. after payment success and confirmation ---> order firestore databases save ,
       await db
         .collection("users")
         .doc(user?.uid)
@@ -85,6 +85,11 @@ function Payment() {
           created: paymentIntent.created,
           paymentIntent: paymentIntent.created,
         });
+
+      // Clear the basket after successful payment
+      dispatch({
+        type: Type.EMPTY_BASKET,
+      });
 
       setprocessing(false);
       navigate("/orders", { state: "you have placed new order" });
@@ -171,7 +176,7 @@ function Payment() {
                     {processing ? (
                       <div className={classes.loading}>
                         <ClipLoader color="grey" size={13} />
-                        <p style={{ size: "13" }}>Please Wait...</p>
+                        Please wait...
                       </div>
                     ) : (
                       "Pay Now"
